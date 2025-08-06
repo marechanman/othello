@@ -1,0 +1,159 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #fff8c5;
+    margin: 0;
+    overflow: hidden;
+    color: #333;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #9a7ae9;
+    margin-bottom: 20px;
+    font-size: 2.8em;
+    text-shadow: 4px 4px 0px #ff9c93;
+    letter-spacing: 2px;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: #fff8c5;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 8px 8px 0px #9a7ae9;
+    border: 3px solid #333;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    border: 3px solid #333;
+    background-color: #c9e4c1;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background-color 0.1s ease;
+}
+
+.cell.playable:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.piece {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
+    position: relative;
+    backface-visibility: hidden;
+    border: 2px solid #333;
+}
+
+.piece.white {
+    /* 画像を背景として使用 */
+    background-image: url('image/okuba.png');
+    background-size: cover;
+    background-position: center;
+    background-color: #9a7ae9;
+    font-size: 0; /* 絵文字を非表示 */
+}
+
+.piece.black {
+    background-color: #ff9c93;
+    color: #fff8c5;
+}
+
+.piece.flipped {
+    transform: rotateY(180deg);
+}
+
+#info-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#message {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #333;
+    background-color: #fff8c5;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0px #ff9c93;
+    border: 2px solid #333;
+    text-align: center;
+}
+
+#score {
+    display: flex;
+    gap: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.score-piece {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 0px #333;
+    border: 2px solid #333;
+}
+
+.score-piece.white {
+    background-color: #9a7ae9;
+    color: #fff8c5;
+}
+
+.score-piece.black {
+    background-color: #ff9c93;
+    color: #fff8c5;
+}
+
+#play-again-button {
+    background-color: #9a7ae9;
+    color: #fff8c5;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2em;
+    padding: 15px 25px;
+    border: 3px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 5px 5px 0px #ff9c93;
+    transition: all 0.1s ease;
+    margin-top: 20px;
+}
+
+#play-again-button:hover {
+    background-color: #7a60c1;
+    box-shadow: 3px 3px 0px #d4847e;
+    transform: translate(2px, 2px);
+}
