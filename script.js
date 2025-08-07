@@ -178,8 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 else if (board[r][c] === 'black') blackCount++;
             }
         }
-        whiteScoreElement.textContent = `🦷 ${whiteCount}`;
-        blackScoreElement.textContent = `👾 ${blackCount}`;
+        whiteScoreElement.innerHTML = `<span></span> ${whiteCount}`; // spanタグを挿入
+        blackScoreElement.innerHTML = `👾 ${blackCount}`;
     }
 
     function checkGameOver() {
